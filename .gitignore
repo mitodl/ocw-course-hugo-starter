@@ -49,7 +49,6 @@ static/zips
 static/webpack
 content/courses/*
 !content/courses/_index.md
-data/*
 ocw-to-hugo.*.log
 *.tgz
 zips
