@@ -1,0 +1,15 @@
+{
+ "scripts": {
+  "gulp:pdfjs": "gulp generic --cwd pdfjs"
+ },
+ "comments": {
+  "dependencies": {},
+  "devDependencies": {}
+ },
+ "dependencies": {
+  "gulp": "^4.0.2"
+ },
+ "devDependencies": {},
+ "name": "standalone-course-prototype",
+ "version": "0.1.0"
+}

@@ -1,0 +1,13 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Hugo Single Course Prototype"
+
+[module]
+  [[module.imports]]
+    path = "github.com/mitodl/ocw-course-hugo-theme"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
