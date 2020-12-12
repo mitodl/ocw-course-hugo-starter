@@ -12,5 +12,7 @@ github.com/mitodl/ocw-course-hugo-theme v0.0.0-20201211214311-c5c91e9293e1 h1:dw
 github.com/mitodl/ocw-course-hugo-theme v0.0.0-20201211214311-c5c91e9293e1/go.mod h1:PYILTfXzW3Gmfx9tnugzGX1ObBPLnVpxQgFtFP2RYmg=
 github.com/mitodl/ocw-course-hugo-theme v0.0.0-20201211215014-d20bf434674e h1:ZKXm5kx2py+d06ScLiQqhpRhRDcOH0FymYmFSwk51Vg=
 github.com/mitodl/ocw-course-hugo-theme v0.0.0-20201211215014-d20bf434674e/go.mod h1:PYILTfXzW3Gmfx9tnugzGX1ObBPLnVpxQgFtFP2RYmg=
+github.com/mitodl/ocw-course-hugo-theme v0.0.0-20201211232828-f91e70bd4772 h1:FQjCqp9479eV8aftGtJzk84kFx5vyEPDpWjqja00+cs=
+github.com/mitodl/ocw-course-hugo-theme v0.0.0-20201211232828-f91e70bd4772/go.mod h1:i4TFcKhMrzrQyJVguHjtRDW8VLxIh2uD9arLwpCcrrg=
 github.com/mozilla/pdf.js v2.6.347+incompatible h1:jrRy2nEzXxT/K8NrAREBQW/K2tOpJgJ395ueLT4oGS8=
 github.com/mozilla/pdf.js v2.6.347+incompatible/go.mod h1:8CTpJx3gH/xiUqG5X853nQsYbx56ElGbpkfWSILoISY=
