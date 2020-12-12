@@ -1,6 +1,6 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "Hugo Single Course Prototype"
+title = "OCW Course Hugo Starter"
 
 [module]
   [[module.imports]]
