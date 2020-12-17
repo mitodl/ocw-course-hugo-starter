@@ -56,7 +56,7 @@ The site will be hosted at the URL mentioned at the end, and options such as the
 
 ## Adding content
 
-Course level metadata for your course should be placed in the JSON format under the `data/courses` folder with a filename matching the course's ID.  For example: `data/courses/18-01-single-variable-calculus-fall-2006.json`.
+Course level metadata for your course should be placed in the JSON format under the `data/courses` folder with a filename matching the course's ID.  For example: `data/courses/18-01-single-variable-calculus-fall-2006.json`.  Detailed info on course-level metadata can be found in the [`ocw-course-hugo-theme`](https://github.com/mitodl/ocw-course-hugo-theme) readme.
 
 ### Course home page
 
@@ -102,4 +102,4 @@ Recitation: 2 sessions / week, 1 hour / session\[
 ...
 ```
 
-The `type` and `layout` values in front matter tell Hugo which page to render, and the `menu` object creates a nav entry for the page.  Detailed info on course-level metadata and layouts can be found in the [`ocw-course-hugo-theme`](https://github.com/mitodl/ocw-course-hugo-theme) readme.
+The `type` and `layout` values in front matter tell Hugo which page to render, and the `menu` object creates a nav entry for the page.  Detailed info on layouts can be found in the [`ocw-course-hugo-theme`](https://github.com/mitodl/ocw-course-hugo-theme) readme.
