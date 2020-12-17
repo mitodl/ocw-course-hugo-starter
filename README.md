@@ -25,7 +25,34 @@ To preview your site, run the following command:
 hugo server
 ```
 
-Hugo will watch your site source and refresh the page as you make changes to the site content.
+You should see output like this: 
+
+```sh
+Start building sites … 
+WARN 2020/12/17 09:33:52 Page.URL is deprecated and will be removed in a future release. Use .Permalink or .RelPermalink. If what you want is the front matter URL value, use .Params.url
+
+                   | EN   
+-------------------+------
+  Pages            | 161  
+  Paginator pages  |   0  
+  Non-page files   |   0  
+  Static files     | 460  
+  Processed images |   0  
+  Aliases          |   0  
+  Sitemaps         |   1  
+  Cleaned          |   0  
+
+Built in 267 ms
+Watching for changes in /home/c4103/Code/ocw-course-hugo-starter/{_vendor,archetypes,content,data,package.json,static}
+Watching for config changes in /home/c4103/Code/ocw-course-hugo-starter/config.toml, /home/c4103/Code/ocw-course-hugo-starter/go.mod
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+```
+
+The site will be hosted at the URL mentioned at the end, and options such as the port number can be set with arguments described [here](https://gohugo.io/commands/hugo_server/).  Hugo will watch your site source and refresh the page as you make changes to the site content.
 
 ## Adding content
 
