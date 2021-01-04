@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Based on templates from https://github.com/natelandau/dotfiles/tree/master/scripting
+
 THEME_PATH="_vendor/github.com/mitodl/ocw-course-hugo-theme"
 PDFJS_PATH="pdfjs"
 OUTPUT_PATH="static"
@@ -41,7 +43,7 @@ _mainScript_() {
         COURSE_DATA_TEMPLATE="$DATA_PATH$COURSE_ID.json"
         mkdir -p data
         eval "cp $COURSE_DATA_TEMPLATE data/course.json"
-        HUGO_COMMAND="hugo --contentDir $COURSE_CONTENT --baseUrl //localhost:3000/courses/$COURSE_ID/ -d $OUPTUT_PATH/courses/$COURSE_ID/"
+        HUGO_COMMAND="hugo --contentDir $COURSE_CONTENT --baseUrl //localhost:3000/courses/$COURSE_ID/ -d $OUTPUT_PATH/courses/$COURSE_ID/"
         eval $HUGO_COMMAND
       fi
     done
