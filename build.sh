@@ -4,7 +4,6 @@ THEME_PATH="_vendor/github.com/mitodl/ocw-course-hugo-theme"
 PDFJS_PATH="pdfjs"
 OUTPUT_PATH="static"
 EXTERNAL_COURSES_PATH=""
-EXTERNAL_WEB_PATH=""
 declare -a ARGS=()
 
 _mainScript_() {
@@ -32,7 +31,7 @@ _mainScript_() {
   cp -r $THEME_PATH/dist/* $OUTPUT_PATH
 
   # run hugo on courses dir if passed in
-  if [[ -n $EXTERNAL_COURSES_PATH ]] && [[ -n $EXTERNAL_WEB_PATH ]]; then
+  if [[ -n $EXTERNAL_COURSES_PATH ]]; then
     COURSES_PATH="$EXTERNAL_COURSES_PATH/content/courses/"
     DATA_PATH="$EXTERNAL_COURSES_PATH/data/courses/"
 
@@ -42,7 +41,7 @@ _mainScript_() {
         COURSE_DATA_TEMPLATE="$DATA_PATH$COURSE_ID.json"
         mkdir -p data
         eval "cp $COURSE_DATA_TEMPLATE data/course.json"
-        HUGO_COMMAND="hugo --contentDir $COURSE_CONTENT --baseUrl //localhost:3000/courses/$COURSE_ID/ -d $EXTERNAL_WEB_PATH/courses/$COURSE_ID/"
+        HUGO_COMMAND="hugo --contentDir $COURSE_CONTENT --baseUrl //localhost:3000/courses/$COURSE_ID/ -d $OUPTUT_PATH/courses/$COURSE_ID/"
         eval $HUGO_COMMAND
       fi
     done
@@ -55,9 +54,8 @@ _usage_() {
   This is a build script for this site's dependencies.
   Options:
     -h, --help        Display this help and exit
-    -o, --output      Output webpack artifacts to another folder (default is "static")
+    -o, --output      Output artifacts to another folder (default is "static")
     -c, --courses     Path to ocw-to-hugo output to build multiple courses
-    -w, --web         Path to website output for depositing hugo sites
 EOF
 }
 
@@ -108,10 +106,6 @@ _parseOptions_() {
       -c | --courses)
         shift
         EXTERNAL_COURSES_PATH=${1}
-        ;;
-      -w | --web)
-        shift
-        EXTERNAL_WEB_PATH=${1}
         ;;
       *) die "invalid option: '$1'." ;;
     esac
