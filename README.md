@@ -17,6 +17,15 @@ To build the JS and CSS for the theme, make sure you have the above prerequisite
 ./build.sh
 ```
 
+By default, artifacts are output to the `static` folder.  Optionally, you may specify an external directory or pull in content output by [ocw-to-hugo](https://github.com/mitodl/ocw-to-hugo).
+
+| Option | Description |
+| --- | --- |
+| `-o, --output` | This is an optional path to output build artifacts to. |
+| `-c, --courses` | This is a path to the output of a run of `ocw-to-hugo`.  When this is specified, webpack artifacts will be built first and output to the path specified with `-o`.  Afterward, courses in the `ocw-to-hugo` output will be iterated and built using `hugo`, outputting to the path specified with `-o`. |
+
+These options are meant for using this course site in the context of a larger static website.  The idea is that you specify the path to your built static site with `-o`, then a path to course data (currently provided by [ocw-to-hugo](https://github.com/mitodl/ocw-to-hugo)) with `-c`.  Webpack artifacts are built and deposited in the specified output, followed by all of the courses passed in which are rendered to the `courses` folder in the same output folder.
+
 ## Running the site
 
 To preview your site, run the following command:
