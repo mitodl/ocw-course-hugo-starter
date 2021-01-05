@@ -52,6 +52,8 @@ content/courses/*
 ocw-to-hugo.*.log
 *.tgz
 zips
+go.mod
+go.sum
 
 # Unit test / coverage reports
 htmlcov/
