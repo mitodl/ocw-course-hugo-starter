@@ -8,7 +8,7 @@ A starter template for a Hugo site that uses [`ocw-course-hugo-theme`](https://g
 
  - [NodeJS](https://nodejs.org/en/download/)
  - [Yarn](https://classic.yarnpkg.com/en/docs/install)
- - [Hugo](https://gohugo.io/getting-started/installing)
+ - [Hugo](https://gohugo.io/getting-started/installing) (minimum version 0.80.0)
 
 ## Building JS & CSS
 
