@@ -6,6 +6,7 @@ THEME_PATH="_vendor/github.com/mitodl/ocw-course-hugo-theme"
 PDFJS_PATH="pdfjs"
 OUTPUT_PATH="static"
 EXTERNAL_COURSES_PATH=""
+BASE_URL=""
 declare -a ARGS=()
 
 _mainScript_() {
@@ -43,7 +44,10 @@ _mainScript_() {
         COURSE_DATA_TEMPLATE="$DATA_PATH$COURSE_ID.json"
         mkdir -p data
         eval "cp $COURSE_DATA_TEMPLATE data/course.json"
-        HUGO_COMMAND="hugo --contentDir $COURSE_CONTENT --baseUrl //localhost:3000/courses/$COURSE_ID/ -d $OUTPUT_PATH/courses/$COURSE_ID/"
+        HUGO_COMMAND="hugo --contentDir $COURSE_CONTENT -d $OUTPUT_PATH/courses/$COURSE_ID/"
+        if [[ -n $BASE_URL ]]; then
+          HUGO_COMMAND="$HUGO_COMMAND --baseUrl $BASE_URL/$COURSE_ID/"
+        fi
         eval $HUGO_COMMAND
       fi
     done
@@ -58,6 +62,7 @@ _usage_() {
     -h, --help        Display this help and exit
     -o, --output      Output artifacts to another folder (default is "static")
     -c, --courses     Path to ocw-to-hugo output to build multiple courses
+    -b, --baseUrl     A baseUrl property to prefix the course id with when building courses
 EOF
 }
 
@@ -108,6 +113,10 @@ _parseOptions_() {
       -c | --courses)
         shift
         EXTERNAL_COURSES_PATH=${1}
+        ;;
+      -b | --baseUrl)
+        shift
+        BASE_URL=${1}
         ;;
       *) die "invalid option: '$1'." ;;
     esac
