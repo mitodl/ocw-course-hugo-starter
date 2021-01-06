@@ -26,6 +26,7 @@ __pycache__/
 # Distribution / packaging
 _vendor/
 build/
+data/course.json
 develop-eggs/
 dist/
 downloads/
