@@ -26,6 +26,7 @@ __pycache__/
 # Distribution / packaging
 _vendor/
 build/
+data/course.json
 develop-eggs/
 dist/
 downloads/
@@ -52,6 +53,8 @@ content/courses/*
 ocw-to-hugo.*.log
 *.tgz
 zips
+go.mod
+go.sum
 
 # Unit test / coverage reports
 htmlcov/
