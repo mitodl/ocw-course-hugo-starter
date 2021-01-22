@@ -1,7 +1,7 @@
 Release Notes
 =============
 
-Version 0.3.0
+Version 0.3.0 (Released January 22, 2021)
 -------------
 
 - Fix reference
