@@ -1,0 +1,98 @@
+metadata:
+  - label: "Course ID"
+    name: "course_id"
+    widget: "string"
+    default: ""
+  - label: "Course Title"
+    name: "course_title"
+    widget: "string"
+    default: ""
+  - label: "Course Image URL"
+    name: "course_image_url"
+    widget: "string"
+    default: ""
+  - label: "Course Image Thumbnail URL"
+    name: "course_thumbnail_image_url"
+    widget: "string"
+    default: ""
+  - label: "Course Image Alternate Text"
+    name: "course_image_alternate_text"
+    widget: "string"
+    default: ""
+  - label: "Course Image Caption Text"
+    name: "course_image_caption_text"
+    widget: "string"
+    default: ""
+  - label: "Publish Date"
+    name: "publishdate"
+    widget: "date"
+    default: ""
+  - label: "Instructors"
+    name: "instructors"
+    widget: "list"
+    allow_add: true
+    field: { label: "Instructor Name", widget: "string", default: "" }
+    default: []
+  - label: "Departments"
+    name: "departments"
+    widget: "list"
+    allow_add: true
+    field: { label: "Department Name", widget: "string", default: "" }
+    default: []
+  - label: "Course Features"
+    name: "course_features"
+    widget: "list"
+    allow_add: true
+    fields:
+      - { label: "Feature", name: "feature", widget: "string", default: "" }
+      - { label: "Subfeature", name: "subfeature", widget: "string", default: "" }
+    default: []
+  - label: "Topics"
+    name: "topics"
+    widget: "list"
+    allow_add: true
+    fields:
+      - { label: "Topic", name: "topic", widget: "string", default: "" }
+      - label: "Subtopics"
+        name: "subtopics"
+        widget: "list"
+        allow_add: true
+        fields:
+          - { label: "Subtopic", name: "subtopic", widget: "string", default: "" }
+          - label: "Specialities"
+            name: "specialities"
+            widget: list
+            allow_add: true
+            field: { label: "Speciality", widget: "string", default: "" }
+            default: []
+        default: []
+  - label: "Course Numbers"
+    name: "course_numbers"
+    widget: "list"
+    allow_add: true
+    field: { label: "Course Number", widget: "string", default: "" }
+  - label: "Term"
+    name: "term"
+    widget: "string"
+    default: ""
+  - label: "Level"
+    name: "level"
+    widget: "string"
+    default: ""
+collections:
+  - name: "pages" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Pages" # Used in the UI
+    label_singular: "Page"
+    folder: "sections" # The folder under the content folder these items should be placed in
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Layout"
+        name: "layout"
+        widget: "select"
+        options:
+          - { label: "Course Home", value: "course_home" }
+          - { label: "Course Section", value: "course_section" }
+          - { label: "Instructor Insights Page", value: "instrucor_insights" }
+          - { label: "PDF Viewer", value: "pdf" }
+          - { label: "YouTube Video Player", value: "video" }
