@@ -45,7 +45,12 @@ metadata:
     allow_add: true
     fields:
       - { label: "Feature", name: "feature", widget: "string", default: "" }
-      - { label: "Subfeature", name: "subfeature", widget: "string", default: "" }
+      - {
+          label: "Subfeature",
+          name: "subfeature",
+          widget: "string",
+          default: "",
+        }
     default: []
   - label: "Topics"
     name: "topics"
@@ -58,7 +63,12 @@ metadata:
         widget: "list"
         allow_add: true
         fields:
-          - { label: "Subtopic", name: "subtopic", widget: "string", default: "" }
+          - {
+              label: "Subtopic",
+              name: "subtopic",
+              widget: "string",
+              default: "",
+            }
           - label: "Specialities"
             name: "specialities"
             widget: list
