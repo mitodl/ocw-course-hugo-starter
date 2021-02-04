@@ -1,17 +1,12 @@
 collections:
-  - name: "pages" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Pages" # Used in the UI
-    label_singular: "Page"
-    folder: "sections" # The folder under the content folder these items should be placed in
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - { label: "Title", name: "title", widget: "string" }
-      - label: "Layout"
-        name: "layout"
-        widget: "select"
-        options:
-          - { label: "Course Home", value: "course_home" }
-          - { label: "Course Section", value: "course_section" }
-          - { label: "Instructor Insights Page", value: "instrucor_insights" }
-          - { label: "PDF Viewer", value: "pdf" }
-          - { label: "YouTube Video Player", value: "video" }
+  - label: "Page"
+    name: "page"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      
+  - label: "Resource"
+    name: "resource"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "markdown"}
