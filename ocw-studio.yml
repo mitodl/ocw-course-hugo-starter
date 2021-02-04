@@ -1,0 +1,14 @@
+collections:
+  - label: "Page"
+    name: "page"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Summary", name: "summary", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      
+  - label: "Resource"
+    name: "resource"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "File", name: "file", widget: "file"}
+      - {label: "Description", name: "description", widget: "markdown"}
