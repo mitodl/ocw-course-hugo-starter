@@ -45,11 +45,6 @@ yarn-debug.log*
 yarn-error.log*
 .yarn-integrity
 data/webpack.json
-static/pdfjs
-static/zips
-static/webpack
-content/courses/*
-!content/courses/_index.md
 ocw-to-hugo.*.log
 *.tgz
 zips
@@ -76,3 +71,10 @@ venv/
 
 # webpack bundle analysis
 stats.json
+
+# Specific Hugo site content/data/assets
+content/*
+!content/.keep
+data/*
+!data/.keep
+static/
