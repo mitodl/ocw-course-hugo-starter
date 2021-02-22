@@ -1,7 +1,7 @@
 Release Notes
 =============
 
-Version 0.6.1
+Version 0.6.1 (Released February 22, 2021)
 -------------
 
 - Fixed gitignore so specific Hugo site content/data/assets are ignored
