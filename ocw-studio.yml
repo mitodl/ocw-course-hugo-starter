@@ -10,5 +10,5 @@ collections:
     name: "resource"
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
       - {label: "File", name: "file", widget: "file"}
-      - {label: "Description", name: "description", widget: "markdown"}
