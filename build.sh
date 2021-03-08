@@ -7,6 +7,7 @@ PDFJS_PATH="pdfjs"
 OUTPUT_PATH="static"
 EXTERNAL_COURSES_PATH=""
 BASE_URL=""
+VERBOSE=false
 declare -a ARGS=()
 
 _mainScript_() {
@@ -35,18 +36,18 @@ _mainScript_() {
 
   # run hugo on courses dir if passed in
   if [[ -n $EXTERNAL_COURSES_PATH ]]; then
-    COURSES_PATH="$EXTERNAL_COURSES_PATH/content/courses/"
-    DATA_PATH="$EXTERNAL_COURSES_PATH/data/courses/"
-
-    for COURSE_CONTENT in $COURSES_PATH*; do
-      if [[ -d $COURSE_CONTENT ]]; then
-        COURSE_ID=${COURSE_CONTENT#"$COURSES_PATH"}
-        COURSE_DATA_TEMPLATE="$DATA_PATH$COURSE_ID.json"
-        mkdir -p data
-        eval "cp $COURSE_DATA_TEMPLATE data/course.json"
-        HUGO_COMMAND="hugo --contentDir $COURSE_CONTENT -d $OUTPUT_PATH/courses/$COURSE_ID/"
+    echo "Running hugo on courses in $EXTERNAL_COURSES_PATH..."
+    for COURSE in $EXTERNAL_COURSES_PATH/*; do
+      if [[ -d $COURSE ]]; then
+        COURSE_ID=${COURSE#"$EXTERNAL_COURSES_PATH/"}
+        HUGO_COMMAND="hugo --contentDir $COURSE/content -d $OUTPUT_PATH/courses/$COURSE_ID/"
         if [[ -n $BASE_URL ]]; then
           HUGO_COMMAND="$HUGO_COMMAND --baseUrl $BASE_URL/$COURSE_ID/"
+        fi
+        if [ $VERBOSE ne true ]; then
+          HUGO_COMMAND="$HUGO_COMMAND --quiet"
+        else
+          echo "Rendering Hugo site for $COURSE_ID..."
         fi
         eval $HUGO_COMMAND
       fi
@@ -63,6 +64,7 @@ _usage_() {
     -o, --output      Output artifacts to another folder (default is "static")
     -c, --courses     Path to ocw-to-hugo output to build multiple courses
     -b, --baseUrl     A baseUrl property to prefix the course id with when building courses
+    -v, --verbose     Enable verbose mode
 EOF
 }
 
@@ -117,6 +119,10 @@ _parseOptions_() {
       -b | --baseUrl)
         shift
         BASE_URL=${1}
+        ;;
+      -v | --verbose)
+        shift
+        VERBOSE=true
         ;;
       *) die "invalid option: '$1'." ;;
     esac
