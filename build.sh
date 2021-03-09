@@ -40,12 +40,12 @@ _mainScript_() {
     for COURSE in $EXTERNAL_COURSES_PATH/*; do
       if [[ -d $COURSE ]]; then
         COURSE_ID=${COURSE#"$EXTERNAL_COURSES_PATH/"}
-        eval "cp $COURSE/data/course.json data/course.json"
+        cp $COURSE/data/course.json data/course.json
         HUGO_COMMAND="hugo --contentDir $COURSE/content -d $OUTPUT_PATH/courses/$COURSE_ID/"
         if [[ -n $BASE_URL ]]; then
           HUGO_COMMAND="$HUGO_COMMAND --baseUrl $BASE_URL/$COURSE_ID/"
         fi
-        if [ $VERBOSE ne true ]; then
+        if [[ $VERBOSE -ne true ]]; then
           HUGO_COMMAND="$HUGO_COMMAND --quiet"
         else
           echo "Rendering Hugo site for $COURSE_ID..."
