@@ -1,6 +1,11 @@
 Release Notes
 =============
 
+Version 0.9.0
+-------------
+
+- update build script to match new `ocw-to-hugo` output structure and add verbose switch (#25)
+
 Version 0.8.0 (Released March 09, 2021)
 -------------
 
