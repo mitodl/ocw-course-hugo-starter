@@ -41,7 +41,7 @@ _mainScript_() {
       if [[ -d $COURSE ]]; then
         COURSE_ID=${COURSE#"$EXTERNAL_COURSES_PATH/"}
         cp $COURSE/data/course.json data/course.json
-        HUGO_COMMAND="hugo --contentDir $COURSE/content -d $OUTPUT_PATH/courses/$COURSE_ID/"
+        HUGO_COMMAND="hugo --config config.toml --configDir $COURSE/config --contentDir $COURSE/content -d $OUTPUT_PATH/courses/$COURSE_ID/"
         if [[ -n $BASE_URL ]]; then
           HUGO_COMMAND="$HUGO_COMMAND --baseUrl $BASE_URL/$COURSE_ID/"
         fi
