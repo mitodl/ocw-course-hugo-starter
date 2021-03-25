@@ -1,6 +1,11 @@
 Release Notes
 =============
 
+Version 0.10.2
+--------------
+
+- Update go.mod to reference ocw-course-hugo-theme@1.10.1 from (mitodl/ocw-course-hugo-theme#67)
+
 Version 0.10.1 (Released March 24, 2021)
 --------------
 
