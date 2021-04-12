@@ -1,6 +1,12 @@
 Release Notes
 =============
 
+Version 0.12.0
+--------------
+
+- Update ocw-course-hugo-theme to 1.12.1 (mitodl/ocw-course-hugo-theme#82)
+- Update ocw-course-hugo-theme to 1.12.0 (mitodl/ocw-course-hugo-theme#81)
+
 Version 0.11.1 (Released April 02, 2021)
 --------------
 
