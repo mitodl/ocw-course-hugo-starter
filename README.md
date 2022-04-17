@@ -1,3 +1,5 @@
+these repo has been replaced by https://github.com/mitodl/ocw-hugo-themes
+
 # ocw-course-hugo-starter
 
 A starter template for a Hugo site that uses [`ocw-course-hugo-theme`](https://github.com/mitodl/ocw-course-hugo-theme)
